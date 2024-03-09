@@ -1,30 +1,23 @@
 package com.picpay.desafio.android
 
-import android.view.View
-import androidx.recyclerview.widget.RecyclerView
-import com.squareup.picasso.Callback
-import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.list_item_user.view.*
 
-class UserListItemViewHolder(
-    itemView: View
-) : RecyclerView.ViewHolder(itemView) {
+import androidx.recyclerview.widget.RecyclerView
+import com.picpay.desafio.android.databinding.ListItemUserBinding
+import com.squareup.picasso.Picasso
+
+class UserListItemViewHolder(private val binding: ListItemUserBinding) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(user: User) {
-        itemView.name.text = user.name
-        itemView.username.text = user.username
-        itemView.progressBar.visibility = View.VISIBLE
-        Picasso.get()
-            .load(user.img)
-            .error(R.drawable.ic_round_account_circle)
-            .into(itemView.picture, object : Callback {
-                override fun onSuccess() {
-                    itemView.progressBar.visibility = View.GONE
-                }
+        // Vincula o nome de usuário e username!!!
+        binding.name.text = user.name
+        binding.username.text = "@${user.username}"
 
-                override fun onError(e: Exception?) {
-                    itemView.progressBar.visibility = View.GONE
-                }
-            })
+        // Vincula a foto do usuário usando a biblioteca Picasso
+        Picasso.get().load(user.img).into(binding.picture)
+
     }
 }
+
+
+//Essencialmente, a classe UserListItemViewHolder encapsula a lógica de vinculação dos dados de um objeto User aos elementos visuais
+// em um item de usuário na RecyclerView. Isso é feito para cada item da lista, otimizando o desempenho ao reciclar views conforme necessário.
