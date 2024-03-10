@@ -1,9 +1,10 @@
-package com.picpay.desafio.android
+package com.picpay.desafio.android.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.picpay.desafio.android.usecase.GetUsersUseCase
 
-abstract class MainViewModelFactory(private val getUsersUseCase: GetUsersUseCase) : ViewModelProvider.Factory {
+class MainViewModelFactory(private val getUsersUseCase: GetUsersUseCase) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
             return MainViewModel(getUsersUseCase) as T

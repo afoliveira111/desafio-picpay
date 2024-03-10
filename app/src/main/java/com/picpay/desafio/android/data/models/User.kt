@@ -1,13 +1,15 @@
-package com.picpay.desafio.android
+package com.picpay.desafio.android.data.models
 
 import java.io.Serializable
 
 data class User(
+
     val img: String,
     val name: String,
     val id: Int,
     val username: String
 ) : Serializable
+
 
 
 //    img: Uma string que representa a URL da imagem do usuário.

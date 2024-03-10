@@ -1,7 +1,8 @@
-package com.picpay.desafio.android
+package com.picpay.desafio.android.presentation.adapter
 
 
 import androidx.recyclerview.widget.RecyclerView
+import com.picpay.desafio.android.data.models.User
 import com.picpay.desafio.android.databinding.ListItemUserBinding
 import com.squareup.picasso.Picasso
 

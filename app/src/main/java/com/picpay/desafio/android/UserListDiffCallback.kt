@@ -1,6 +1,7 @@
 package com.picpay.desafio.android
 
 import androidx.recyclerview.widget.DiffUtil
+import com.picpay.desafio.android.data.models.User
 
 class UserListDiffCallback(
     private val oldList: List<User>,
@@ -24,4 +25,9 @@ class UserListDiffCallback(
     }
 }
 
-//Não conheço para tentar explicar!
+
+//Essa classe é utilizada pelo DiffUtil ao calcular as
+// diferenças entre duas listas de usuários. Ela ajuda
+// a otimizar as atualizações na RecyclerView, garantindo
+// que apenas as alterações necessárias sejam animadas,
+// resultando em uma melhor experiência do usuário.

@@ -1,4 +1,4 @@
-package com.picpay.desafio.android
+package com.picpay.desafio.android.data.api
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -17,6 +17,7 @@ object ApiModule {
 
     private val okHttp: OkHttpClient by lazy {
         OkHttpClient.Builder()
+
             .build()
     }
 
